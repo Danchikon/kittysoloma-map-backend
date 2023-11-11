@@ -12,10 +12,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KittysolomaMap.Infrastructu
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "resources", "resources", "{BE683802-1426-4704-9F9A-F57257D9CDB1}"
 	ProjectSection(SolutionItems) = preProject
-		docker-compose.common.yaml = docker-compose.common.yaml
 		.dockerignore = .dockerignore
 		Dockerfile = Dockerfile
 		global.json = global.json
+		.gitignore = .gitignore
+		README.md = README.md
 	EndProjectSection
 EndProject
 Global

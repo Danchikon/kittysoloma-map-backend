@@ -52,8 +52,15 @@ public static class ServiceCollectionExtensions
         services.AddOverpassApi(configuration);
         services.AddGcpAirQualityApi(configuration);
 
-        services.AddAws(configuration);
-        services.AddAwsFileStorage();
+        if (environment.IsDevelopment())
+        {
+            services.AddMinioFileStorage();
+        }
+        else
+        {
+            services.AddAws(configuration);
+            services.AddAwsFileStorage();
+        }
 
         services.TryAddScoped<IUnitOfWork, EfUnitOfWork<KittysolomaMapDbContext>>();
         services.AddRepositories();
