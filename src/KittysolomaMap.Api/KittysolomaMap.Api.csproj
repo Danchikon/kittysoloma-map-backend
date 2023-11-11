@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <LangVersion>11</LangVersion>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="HotChocolate.AspNetCore" Version="14.0.0-p.7" />
+        <PackageReference Include="HotChocolate.Data" Version="14.0.0-p.7" />
+        <PackageReference Include="HotChocolate.Data.EntityFramework" Version="14.0.0-p.7" />
+        <PackageReference Include="HotChocolate.Data.Spatial" Version="14.0.0-p.7" />
+        <PackageReference Include="HotChocolate.Types.Spatial" Version="14.0.0-p.7" />
+        <PackageReference Include="Mapster.Immutable" Version="1.0.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.12">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.12">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\KittysolomaMap.Application\KittysolomaMap.Application.csproj" />
+      <ProjectReference Include="..\KittysolomaMap.Infrastructure\KittysolomaMap.Infrastructure.csproj" />
+    </ItemGroup>
+
+</Project>

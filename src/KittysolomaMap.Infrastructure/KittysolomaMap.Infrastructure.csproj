@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <LangVersion>11</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.7.7" />
+      <PackageReference Include="AWSSDK.S3" Version="3.7.205.17" />
+      <PackageReference Include="AWSSDK.SecretsManager" Version="3.7.201.48" />
+      <PackageReference Include="AWSSDK.SimpleEmailV2" Version="3.7.202.6" />
+      <PackageReference Include="AWSSDK.Translate" Version="3.7.200.61" />
+      <PackageReference Include="Bogus" Version="34.0.2" />
+      <PackageReference Include="Dapper" Version="2.1.15" />
+      <PackageReference Include="EFCore.NamingConventions" Version="7.0.2" />
+      <PackageReference Include="Microsoft.AspNetCore.Cryptography.KeyDerivation" Version="7.0.13" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.12" />
+      <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
+      <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="7.0.0" />
+      <PackageReference Include="Microsoft.Extensions.ObjectPool" Version="7.0.13" />
+      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.11" />
+      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.NetTopologySuite" Version="7.0.11" />
+      <PackageReference Include="Polly" Version="8.1.0" />
+      <PackageReference Include="Polly.Extensions" Version="8.1.0" />
+      <PackageReference Include="Polly.Extensions.Http" Version="3.0.0" />
+      <PackageReference Include="QuickGraph" Version="3.6.61119.7" />
+      <PackageReference Include="Refit" Version="7.0.0" />
+      <PackageReference Include="Refit.HttpClientFactory" Version="7.0.0" />
+      <PackageReference Include="Serilog.Exceptions.Refit" Version="8.4.0" />
+      <PackageReference Include="Serilog.Extensions.Hosting" Version="7.0.0" />
+      <PackageReference Include="Serilog.Settings.Configuration" Version="7.0.1" />
+      <PackageReference Include="Serilog.Sinks.Console" Version="4.1.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\KittysolomaMap.Application\KittysolomaMap.Application.csproj" />
+      <ProjectReference Include="..\KittysolomaMap.Domain\KittysolomaMap.Domain.csproj" />
+    </ItemGroup>
+
+</Project>

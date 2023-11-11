@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  
+  postgres_postgis:
+    image: postgis/postgis:16-3.4
+    hostname: postgres_postgis
+    container_name: postgres_postgis
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: postgres_postgis
+      POSTGRES_PASSWORD: postgres_postgis
+      POSTGRES_DB: kittysoloma_map
+    volumes:
+      - ./postgres_postgis/data:/var/lib/postgresql/data/
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready", "-d", "kittysoloma_map" ]
+      interval: 30s
+      timeout: 20s
+      retries: 5
+      start_period: 80s
+  
+  minio:
+    image: minio/minio:RELEASE.2023-10-25T06-33-25Z
+    hostname: minio
+    container_name: minio
+    restart: on-failure
+    command: server /data --console-address ":9001"
+    ports:
+      - "9001:9001"
+      - "9000:9000"
+    environment:
+      MINIO_REGION: eu-central-1
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    volumes:
+      - ./minio/data:/data
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:9000/minio/health/live" ]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+      start_period: 80s
+   
